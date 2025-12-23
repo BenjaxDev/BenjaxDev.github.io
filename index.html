@@ -1,237 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Benjax — DJ & Producer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --blue: #0D1B2A;
-      --purple: #6A0DAD;
-      --orange: #FFA500;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background: var(--blue);
-      color: white;
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-    }
-
-    section {
-      padding: 80px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    h1, h2 {
-      font-family: 'Orbitron', sans-serif;
-      letter-spacing: 3px;
-    }
-
-    h1 {
-      font-size: 4rem;
-      color: var(--orange);
-      margin: 0;
-    }
-
-    h2 {
-      color: var(--purple);
-      margin-bottom: 20px;
-    }
-
-    p {
-      opacity: 0.9;
-    }
-
-    /* HERO */
-    header {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px;
-    }
-
-    .tag {
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
-
-    /* BUTTONS */
-    button {
-      background: transparent;
-      border: 2px solid var(--orange);
-      color: white;
-      padding: 12px 20px;
-      cursor: pointer;
-      font-family: 'Orbitron', sans-serif;
-      letter-spacing: 2px;
-      transition: all 0.3s ease;
-    }
-
-    button:hover {
-      background: var(--orange);
-      color: black;
-      box-shadow: 0 0 15px var(--orange);
-    }
-
-    /* CARDS */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 20px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 0 20px rgba(106,13,173,0.4);
-    }
-
-    /* SOCIALS */
-    .socials a {
-      margin-right: 15px;
-      color: var(--orange);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    /* GLITCH */
-    .glitch {
-      position: relative;
-    }
-
-    .glitch::before,
-    .glitch::after {
-      content: attr(data-text);
-      position: absolute;
-      left: 0;
-      top: 0;
-      opacity: 0.7;
-    }
-
-    .glitch::before {
-      color: var(--purple);
-      animation: glitch 2s infinite;
-    }
-
-    .glitch::after {
-      color: var(--orange);
-      animation: glitch 1.5s infinite reverse;
-    }
-
-    @keyframes glitch {
-      0% { transform: translate(0); }
-      20% { transform: translate(-2px, 2px); }
-      40% { transform: translate(-2px, -2px); }
-      60% { transform: translate(2px, 2px); }
-      80% { transform: translate(2px, -2px); }
-      100% { transform: translate(0); }
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px;
-      opacity: 0.6;
-      font-size: 0.9rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="djbenjax - Colombian DJ & Producer specializing in Tech House, UK Garage, and Afro House">
+    <title>djbenjax | Tech House & UK Garage DJ</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- CRT Scanline Effect Overlay -->
+    <div class="crt-overlay"></div>
+    <div class="grain-overlay"></div>
 
-  <!-- HERO -->
-  <header>
-    <div>
-      <div class="tag">DJ / Producer</div>
-      <h1 class="glitch" data-text="BENJAX">BENJAX</h1>
-      <p>Tech House · Afro House · UK Garage · Speed Garage<br>Bogotá, Colombia</p>
-    </div>
-  </header>
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo glitch-text" data-text="djbenjax">djbenjax</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">HOME</a>
+                <a href="epk.html" class="nav-link">EPK</a>
+                <a href="rider.html" class="nav-link">RIDER</a>
+                <a href="identity.html" class="nav-link">IDENTITY</a>
+            </div>
+            <button class="lang-toggle" id="langToggle">
+                <span class="lang-en">EN</span>
+                <span class="lang-divider">/</span>
+                <span class="lang-es">ES</span>
+            </button>
+        </div>
+    </nav>
 
-  <!-- BIOGRAPHY -->
-  <section>
-    <h2>Biography</h2>
-    <p id="bio">
-      Benjamín Londoño, conocido artísticamente como Benjax, es un DJ y productor colombiano de 13 años que representa una nueva generación de talento emergente en la música electrónica. Su propuesta sonora fusiona géneros como Tech House, Afro House y UK Garage, aportando frescura y energía a cada set.
-      <br><br>
-      Desde los 3 años mostró una conexión profunda con la música, comenzando con instrumentos como la guitarra, la batería y el piano. Su formación incluye DNA Music, Tomorrowland Academy y MadSkills.
-    </p>
-    <br>
-    <button onclick="translateBio()">Translate to English</button>
-  </section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo-placeholder">
+                    <!-- Your logo will go here -->
+                    <div class="logo-text glitch-text" data-text="djbenjax">djbenjax</div>
+                </div>
+            </div>
+            
+            <div class="genres">
+                <div class="genre-primary">
+                    <h2 class="genre-label" data-en="PRIMARY" data-es="PRINCIPAL">PRIMARY</h2>
+                    <div class="genre-tags">
+                        <span class="genre-tag">TECH HOUSE</span>
+                        <span class="genre-tag">UK GARAGE</span>
+                    </div>
+                </div>
+                <div class="genre-secondary">
+                    <h2 class="genre-label" data-en="SECONDARY" data-es="SECUNDARIO">SECONDARY</h2>
+                    <div class="genre-tags">
+                        <span class="genre-tag">AFRO HOUSE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- MUSIC -->
-  <section>
-    <h2>Music / Sets</h2>
-    <p>SoundCloud, YouTube or Spotify embeds go here.</p>
-  </section>
+    <!-- Biography Section -->
+    <section class="bio-section">
+        <div class="container">
+            <h2 class="section-title glitch-text" data-text="BIOGRAPHY" data-en="BIOGRAPHY" data-es="BIOGRAFÍA">BIOGRAPHY</h2>
+            
+            <div class="bio-content">
+                <div class="bio-image">
+                    <!-- Your photo will go here -->
+                    <div class="image-placeholder">
+                        <span>[YOUR PHOTO]</span>
+                    </div>
+                </div>
+                
+                <div class="bio-text">
+                    <p class="lang-en">
+                        Benjamín Londoño, known as djbenjax, is a 13-year-old Colombian DJ and producer with a deep passion for electronic music. From a very young age, he showed interest in music, starting with guitar, drums, and piano, and from the age of 7, he became fascinated with the world of EDM. Trained at DNA Music, Tomorrowland Academy, and MadSkills, he has developed his own style within genres such as Tech House, Afro House, UK Garage, and Drum & Bass.
+                    </p>
+                    <p class="lang-en">
+                        Throughout his career, Benjamín has participated in private events and unique presentations, such as the EVA fair or Beat_Scene, combining his technical skills with unique creativity that transforms each set into an immersive experience. Additionally, his talent extends to music production, graphic design, 3D modeling, and video editing, allowing him to create a comprehensive and complete artistic project.
+                    </p>
+                    <p class="lang-en">
+                        With a constant focus on growing as an artist and connecting with his audience, Benjax seeks to bring the energy of his sets to every stage, generating memorable experiences both live and through digital platforms. You can find his music and sets in the EPK.
+                    </p>
+                    
+                    <p class="lang-es" style="display: none;">
+                        Benjamín Londoño, conocido como djbenjax, es un DJ y productor colombiano de 13 años con una profunda pasión por la música electrónica. Desde muy pequeño mostró interés por la música, empezando con guitarra, batería y piano, y desde los 7 años se fascinó con el mundo del EDM. Formado en DNA Music, Tomorrowland Academy y MadSkills, ha desarrollado su estilo propio dentro de géneros como Tech House, Afro House, UK Garage y Drum & Bass.
+                    </p>
+                    <p class="lang-es" style="display: none;">
+                        A lo largo de su trayectoria, Benjamín ha participado en eventos privados y presentaciones únicas, como la feria EVA o Beat_Scene, combinando su habilidad técnica con una creatividad única que transforma cada set en una experiencia envolvente. Además, su talento se extiende a la producción musical, el diseño gráfico, modelado 3D y edición de video, lo que le permite crear un proyecto artístico integral y completo.
+                    </p>
+                    <p class="lang-es" style="display: none;">
+                        Con un enfoque constante en crecer como artista y conectar con su audiencia, Benjax busca llevar la energía de sus sets a cada escenario, generando experiencias memorables tanto en vivo como a través de plataformas digitales. Puedes encontrar su música y sus sets en el EPK.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- HIGHLIGHTS -->
-  <section>
-    <h2>Highlights</h2>
-    <ul>
-      <li>Main DJ performance at Café Concierto 2025.</li>
-      <li>DJ performance at Feria EVA (Love Edition) 2025.</li>
-      <li>Recording collaboration with AlphaTheta (Beat_Scene).</li>
-      <li>Regularly hired for private events.</li>
-      <li>Training in DNA Music, Tomorrowland Academy and MadSkills.</li>
-    </ul>
-  </section>
+    <!-- Highlights Section -->
+    <section class="highlights-section">
+        <div class="container">
+            <h2 class="section-title glitch-text" data-text="HIGHLIGHTS" data-en="HIGHLIGHTS" data-es="DESTACADOS">HIGHLIGHTS</h2>
+            
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <div class="highlight-number">01</div>
+                    <p class="lang-en">Main DJ performance in front of hundreds of attendees at Café Concierto 2025, achieving great connection with the audience.</p>
+                    <p class="lang-es" style="display: none;">Actuación como DJ principal frente a cientos de asistentes en el Café Concierto 2025, logrando gran conexión con el público.</p>
+                </div>
+                
+                <div class="highlight-card">
+                    <div class="highlight-number">02</div>
+                    <p class="lang-en">DJ performance in front of hundreds of attendees at Feria EVA (Love edition) 2025.</p>
+                    <p class="lang-es" style="display: none;">Actuación como DJ frente a cientos de asistentes en la Feria EVA (Love edition) 2025.</p>
+                </div>
+                
+                <div class="highlight-card">
+                    <div class="highlight-number">03</div>
+                    <p class="lang-en">Recording in collaboration with AlphaTheta (Beat_Scene)</p>
+                    <p class="lang-es" style="display: none;">Grabación en colaboración con AlphaTheta (Beat_Scene)</p>
+                </div>
+                
+                <div class="highlight-card">
+                    <div class="highlight-number">04</div>
+                    <p class="lang-en">Regularly hired for private events from an early age, standing out for dynamic sets adapted to each audience.</p>
+                    <p class="lang-es" style="display: none;">Contratado regularmente para eventos privados desde temprana edad, destacando por sets dinámicos y adaptados a cada público.</p>
+                </div>
+                
+                <div class="highlight-card">
+                    <div class="highlight-number">05</div>
+                    <p class="lang-en">Training at DNA Music, Tomorrowland Academy and MadSkills.</p>
+                    <p class="lang-es" style="display: none;">Formación en DNA Music, Tomorrowland Academy y MadSkills.</p>
+                </div>
+                
+                <div class="highlight-card">
+                    <div class="highlight-number">06</div>
+                    <p class="lang-en">Own design of branding, visuals and music production.</p>
+                    <p class="lang-es" style="display: none;">Diseño propio de branding, visuales y producción musical.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- UPCOMING SHOWS -->
-  <section>
-    <h2>Upcoming Shows</h2>
-    <div class="grid">
-      <div class="card">
-        <strong>Coming Soon</strong>
-        <p>Bogotá, Colombia</p>
-      </div>
-    </div>
-  </section>
+    <!-- Socials Section -->
+    <section class="socials-section">
+        <div class="container">
+            <h2 class="section-title glitch-text" data-text="CONNECT" data-en="CONNECT" data-es="CONECTA">CONNECT</h2>
+            
+            <div class="socials-grid">
+                <a href="https://instagram.com/djbenjax" target="_blank" class="social-card">
+                    <div class="social-icon">IG</div>
+                    <div class="social-name">INSTAGRAM</div>
+                </a>
+                
+                <a href="https://youtube.com/@djbenjax" target="_blank" class="social-card">
+                    <div class="social-icon">YT</div>
+                    <div class="social-name">YOUTUBE</div>
+                </a>
+                
+                <a href="https://tiktok.com/@djbenjax" target="_blank" class="social-card">
+                    <div class="social-icon">TT</div>
+                    <div class="social-name">TIKTOK</div>
+                </a>
+                
+                <a href="https://open.spotify.com/artist/djbenjax" target="_blank" class="social-card">
+                    <div class="social-icon">SP</div>
+                    <div class="social-name">SPOTIFY</div>
+                </a>
+            </div>
+        </div>
+    </section>
 
-  <!-- CONTACT -->
-  <section>
-    <h2>Contact</h2>
-    <div class="socials">
-      <a href="#">Instagram</a>
-      <a href="#">YouTube</a>
-      <a href="#">Spotify</a>
-      <a href="#">Discord</a>
-    </div>
-  </section>
+    <!-- Next Shows Section -->
+    <section class="shows-section">
+        <div class="container">
+            <h2 class="section-title glitch-text" data-text="NEXT SHOWS" data-en="NEXT SHOWS" data-es="PRÓXIMAS FECHAS">NEXT SHOWS</h2>
+            
+            <div class="shows-list">
+                <div class="show-item">
+                    <div class="show-date">TBA</div>
+                    <div class="show-details">
+                        <div class="show-name" data-en="Coming Soon" data-es="Próximamente">Coming Soon</div>
+                        <div class="show-location">---</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    © Benjax — All rights reserved
-  </footer>
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title glitch-text" data-text="CONTACT" data-en="CONTACT" data-es="CONTACTO">CONTACT</h2>
+            
+            <div class="contact-content">
+                <a href="mailto:booking@djbenjax.com" class="contact-email glitch-text" data-text="booking@djbenjax.com">booking@djbenjax.com</a>
+            </div>
+        </div>
+    </section>
 
-  <script>
-    function translateBio() {
-      document.getElementById("bio").innerText =
-      "Benjamín Londoño, known artistically as Benjax, is a 13-year-old Colombian DJ and producer representing a new generation of emerging electronic music talent. His sound blends Tech House, Afro House, and UK Garage, bringing freshness and energy to every set. He began his musical journey at the age of 3 and has trained at DNA Music, Tomorrowland Academy, and MadSkills.";
-    }
-  </script>
+    <!-- EPK Button -->
+    <section class="epk-cta">
+        <div class="container">
+            <a href="epk.html" class="cta-button">
+                <span class="button-text" data-en="VIEW EPK" data-es="VER EPK">VIEW EPK</span>
+                <span class="button-arrow">→</span>
+            </a>
+        </div>
+    </section>
 
-</body>
-</html>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 djbenjax. All rights reserved.</p>
+        </div>
+    </footer>
 
-
+    <script src="js/main.js"></script>
 </body>
 </html>
