@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -15,13 +15,45 @@
       --orange: #FFA500;
     }
 
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       background: var(--blue);
       color: white;
       font-family: 'Inter', sans-serif;
+      line-height: 1.6;
     }
 
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 3px;
+    }
+
+    h1 {
+      font-size: 4rem;
+      color: var(--orange);
+      margin: 0;
+    }
+
+    h2 {
+      color: var(--purple);
+      margin-bottom: 20px;
+    }
+
+    p {
+      opacity: 0.9;
+    }
+
+    /* HERO */
     header {
       min-height: 100vh;
       display: flex;
@@ -31,40 +63,175 @@
       padding: 40px;
     }
 
-    h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 4rem;
-      color: var(--orange);
-      letter-spacing: 4px;
-    }
-
-    p {
-      max-width: 700px;
-      margin: 20px auto;
-      opacity: 0.85;
-    }
-
     .tag {
-      color: var(--purple);
       text-transform: uppercase;
-      letter-spacing: 3px;
+      letter-spacing: 4px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* BUTTONS */
+    button {
+      background: transparent;
+      border: 2px solid var(--orange);
+      color: white;
+      padding: 12px 20px;
+      cursor: pointer;
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 2px;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: var(--orange);
+      color: black;
+      box-shadow: 0 0 15px var(--orange);
+    }
+
+    /* CARDS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 20px rgba(106,13,173,0.4);
+    }
+
+    /* SOCIALS */
+    .socials a {
+      margin-right: 15px;
+      color: var(--orange);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* GLITCH */
+    .glitch {
+      position: relative;
+    }
+
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0.7;
+    }
+
+    .glitch::before {
+      color: var(--purple);
+      animation: glitch 2s infinite;
+    }
+
+    .glitch::after {
+      color: var(--orange);
+      animation: glitch 1.5s infinite reverse;
+    }
+
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(-2px, -2px); }
+      60% { transform: translate(2px, 2px); }
+      80% { transform: translate(2px, -2px); }
+      100% { transform: translate(0); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      opacity: 0.6;
       font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
 
+  <!-- HERO -->
   <header>
     <div>
       <div class="tag">DJ / Producer</div>
-      <h1>BENJAX</h1>
-      <p>
-        Tech House · Afro House · UK Garage · Speed Garage  
-        <br>
-        Bogotá, Colombia
-      </p>
+      <h1 class="glitch" data-text="BENJAX">BENJAX</h1>
+      <p>Tech House · Afro House · UK Garage · Speed Garage<br>Bogotá, Colombia</p>
     </div>
   </header>
+
+  <!-- BIOGRAPHY -->
+  <section>
+    <h2>Biography</h2>
+    <p id="bio">
+      Benjamín Londoño, conocido artísticamente como Benjax, es un DJ y productor colombiano de 13 años que representa una nueva generación de talento emergente en la música electrónica. Su propuesta sonora fusiona géneros como Tech House, Afro House y UK Garage, aportando frescura y energía a cada set.
+      <br><br>
+      Desde los 3 años mostró una conexión profunda con la música, comenzando con instrumentos como la guitarra, la batería y el piano. Su formación incluye DNA Music, Tomorrowland Academy y MadSkills.
+    </p>
+    <br>
+    <button onclick="translateBio()">Translate to English</button>
+  </section>
+
+  <!-- MUSIC -->
+  <section>
+    <h2>Music / Sets</h2>
+    <p>SoundCloud, YouTube or Spotify embeds go here.</p>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section>
+    <h2>Highlights</h2>
+    <ul>
+      <li>Main DJ performance at Café Concierto 2025.</li>
+      <li>DJ performance at Feria EVA (Love Edition) 2025.</li>
+      <li>Recording collaboration with AlphaTheta (Beat_Scene).</li>
+      <li>Regularly hired for private events.</li>
+      <li>Training in DNA Music, Tomorrowland Academy and MadSkills.</li>
+    </ul>
+  </section>
+
+  <!-- UPCOMING SHOWS -->
+  <section>
+    <h2>Upcoming Shows</h2>
+    <div class="grid">
+      <div class="card">
+        <strong>Coming Soon</strong>
+        <p>Bogotá, Colombia</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section>
+    <h2>Contact</h2>
+    <div class="socials">
+      <a href="#">Instagram</a>
+      <a href="#">YouTube</a>
+      <a href="#">Spotify</a>
+      <a href="#">Discord</a>
+    </div>
+  </section>
+
+  <footer>
+    © Benjax — All rights reserved
+  </footer>
+
+  <script>
+    function translateBio() {
+      document.getElementById("bio").innerText =
+      "Benjamín Londoño, known artistically as Benjax, is a 13-year-old Colombian DJ and producer representing a new generation of emerging electronic music talent. His sound blends Tech House, Afro House, and UK Garage, bringing freshness and energy to every set. He began his musical journey at the age of 3 and has trained at DNA Music, Tomorrowland Academy, and MadSkills.";
+    }
+  </script>
+
+</body>
+</html>
+
 
 </body>
 </html>
